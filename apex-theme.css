@@ -1,0 +1,480 @@
+/*
+ * Apex Theme for Logseq
+ * An elegant, minimalistic dark theme inspired by Apple's design philosophy
+ * with sophisticated typography and harmonious color theory
+ */
+
+/* Import modern fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Color Palette - Inspired by Apple's design with sophisticated grays and accents */
+  --apex-bg-primary: #0d0d0d;          /* Deep black background */
+  --apex-bg-secondary: #1a1a1a;        /* Elevated surfaces */
+  --apex-bg-tertiary: #2a2a2a;         /* Interactive elements */
+  --apex-bg-quaternary: #3a3a3a;       /* Hover states */
+  
+  /* Text colors with perfect contrast ratios */
+  --apex-text-primary: #ffffff;        /* Primary text */
+  --apex-text-secondary: #a0a0a0;      /* Secondary text */
+  --apex-text-tertiary: #6a6a6a;       /* Tertiary text */
+  --apex-text-quaternary: #4a4a4a;     /* Disabled text */
+  
+  /* Accent colors - Sophisticated and harmonious */
+  --apex-accent-blue: #007aff;         /* Apple blue */
+  --apex-accent-blue-hover: #0056cc;   /* Blue hover */
+  --apex-accent-green: #30d158;        /* Success green */
+  --apex-accent-orange: #ff9500;       /* Warning orange */
+  --apex-accent-red: #ff3b30;          /* Error red */
+  --apex-accent-purple: #af52de;       /* Purple accent */
+  
+  /* Neutral colors */
+  --apex-border-primary: #3a3a3a;      /* Primary borders */
+  --apex-border-secondary: #2a2a2a;    /* Secondary borders */
+  --apex-shadow: rgba(0, 0, 0, 0.5);   /* Drop shadows */
+  
+  /* Typography scale */
+  --apex-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  --apex-font-mono: 'JetBrains Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  
+  --apex-font-size-xs: 0.75rem;        /* 12px */
+  --apex-font-size-sm: 0.875rem;       /* 14px */
+  --apex-font-size-base: 1rem;         /* 16px */
+  --apex-font-size-lg: 1.125rem;       /* 18px */
+  --apex-font-size-xl: 1.25rem;        /* 20px */
+  --apex-font-size-2xl: 1.5rem;        /* 24px */
+  --apex-font-size-3xl: 1.875rem;      /* 30px */
+  
+  /* Spacing scale */
+  --apex-space-xs: 0.25rem;            /* 4px */
+  --apex-space-sm: 0.5rem;             /* 8px */
+  --apex-space-md: 1rem;               /* 16px */
+  --apex-space-lg: 1.5rem;             /* 24px */
+  --apex-space-xl: 2rem;               /* 32px */
+  --apex-space-2xl: 3rem;              /* 48px */
+  
+  /* Border radius */
+  --apex-radius-sm: 0.375rem;          /* 6px */
+  --apex-radius-md: 0.5rem;            /* 8px */
+  --apex-radius-lg: 0.75rem;           /* 12px */
+  --apex-radius-xl: 1rem;              /* 16px */
+  
+  /* Transitions */
+  --apex-transition-fast: 0.15s ease-out;
+  --apex-transition-base: 0.25s ease-out;
+  --apex-transition-slow: 0.4s ease-out;
+}
+
+/* Global reset and base styles */
+html {
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--apex-font-family);
+  background-color: var(--apex-bg-primary);
+  color: var(--apex-text-primary);
+  margin: 0;
+  padding: 0;
+}
+
+/* Main application container */
+#app-container {
+  background-color: var(--apex-bg-primary);
+}
+
+/* Top bar styling */
+#head {
+  background-color: var(--apex-bg-secondary);
+  border-bottom: 1px solid var(--apex-border-primary);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Left sidebar */
+#left-sidebar {
+  background-color: var(--apex-bg-secondary);
+  border-right: 1px solid var(--apex-border-primary);
+}
+
+.left-sidebar-inner {
+  padding: var(--apex-space-lg);
+}
+
+.left-sidebar-inner .nav-header {
+  font-weight: 600;
+  font-size: var(--apex-font-size-sm);
+  color: var(--apex-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--apex-space-md);
+}
+
+/* Navigation links */
+.left-sidebar-inner a,
+.nav-content-item {
+  color: var(--apex-text-secondary);
+  text-decoration: none;
+  padding: var(--apex-space-sm) var(--apex-space-md);
+  border-radius: var(--apex-radius-md);
+  transition: all var(--apex-transition-fast);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--apex-space-xs);
+}
+
+.left-sidebar-inner a:hover,
+.nav-content-item:hover {
+  background-color: var(--apex-bg-tertiary);
+  color: var(--apex-text-primary);
+  transform: translateX(2px);
+}
+
+/* Main content area */
+#main-content-container {
+  background-color: var(--apex-bg-primary);
+}
+
+.cp__sidebar-main-content {
+  padding: var(--apex-space-xl);
+}
+
+/* Page title */
+h1.title {
+  font-size: var(--apex-font-size-3xl);
+  font-weight: 700;
+  color: var(--apex-text-primary);
+  margin-bottom: var(--apex-space-xl);
+  letter-spacing: -0.02em;
+}
+
+/* Block content */
+.block-content {
+  font-size: var(--apex-font-size-base);
+  line-height: 1.7;
+  color: var(--apex-text-primary);
+}
+
+/* Block containers */
+.ls-block {
+  margin-bottom: var(--apex-space-md);
+}
+
+.block-content-wrapper {
+  background-color: transparent;
+  transition: background-color var(--apex-transition-fast);
+  border-radius: var(--apex-radius-md);
+  padding: var(--apex-space-xs);
+}
+
+.block-content-wrapper:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Bullets and indentation */
+.bullet-container {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  background-color: var(--apex-text-tertiary);
+  border-radius: 50%;
+  transition: all var(--apex-transition-fast);
+}
+
+.bullet:hover {
+  background-color: var(--apex-accent-blue);
+  transform: scale(1.2);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--apex-font-family);
+  font-weight: 600;
+  color: var(--apex-text-primary);
+  margin: var(--apex-space-lg) 0 var(--apex-space-md) 0;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: var(--apex-font-size-3xl); }
+h2 { font-size: var(--apex-font-size-2xl); }
+h3 { font-size: var(--apex-font-size-xl); }
+h4 { font-size: var(--apex-font-size-lg); }
+h5 { font-size: var(--apex-font-size-base); }
+h6 { font-size: var(--apex-font-size-sm); }
+
+/* Links */
+a {
+  color: var(--apex-accent-blue);
+  text-decoration: none;
+  transition: color var(--apex-transition-fast);
+}
+
+a:hover {
+  color: var(--apex-accent-blue-hover);
+}
+
+/* Page references */
+.page-reference {
+  color: var(--apex-accent-blue);
+  background-color: rgba(0, 122, 255, 0.1);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--apex-radius-sm);
+  text-decoration: none;
+  transition: all var(--apex-transition-fast);
+}
+
+.page-reference:hover {
+  background-color: rgba(0, 122, 255, 0.2);
+  color: var(--apex-accent-blue-hover);
+}
+
+/* Tags */
+.tag {
+  background-color: var(--apex-bg-tertiary);
+  color: var(--apex-text-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--apex-radius-sm);
+  font-size: var(--apex-font-size-sm);
+  font-weight: 500;
+  transition: all var(--apex-transition-fast);
+}
+
+.tag:hover {
+  background-color: var(--apex-accent-purple);
+  color: var(--apex-text-primary);
+}
+
+/* Code blocks */
+code {
+  font-family: var(--apex-font-mono);
+  background-color: var(--apex-bg-tertiary);
+  color: var(--apex-accent-green);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--apex-radius-sm);
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--apex-bg-secondary);
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-lg);
+  padding: var(--apex-space-lg);
+  overflow-x: auto;
+  margin: var(--apex-space-md) 0;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--apex-text-primary);
+}
+
+/* Block quotes */
+blockquote {
+  border-left: 4px solid var(--apex-accent-blue);
+  padding-left: var(--apex-space-lg);
+  margin: var(--apex-space-md) 0;
+  color: var(--apex-text-secondary);
+  font-style: italic;
+  background-color: rgba(0, 122, 255, 0.05);
+  border-radius: 0 var(--apex-radius-md) var(--apex-radius-md) 0;
+}
+
+/* Lists */
+ul, ol {
+  margin: var(--apex-space-md) 0;
+  padding-left: var(--apex-space-lg);
+}
+
+li {
+  margin: var(--apex-space-sm) 0;
+}
+
+/* Buttons */
+button,
+.button {
+  background-color: var(--apex-bg-tertiary);
+  color: var(--apex-text-primary);
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-md);
+  padding: var(--apex-space-sm) var(--apex-space-md);
+  font-family: var(--apex-font-family);
+  font-size: var(--apex-font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--apex-transition-fast);
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--apex-bg-quaternary);
+  border-color: var(--apex-accent-blue);
+  transform: translateY(-1px);
+}
+
+/* Primary button */
+.button-primary {
+  background-color: var(--apex-accent-blue);
+  border-color: var(--apex-accent-blue);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--apex-accent-blue-hover);
+  border-color: var(--apex-accent-blue-hover);
+}
+
+/* Input fields */
+input[type="text"],
+input[type="search"],
+textarea {
+  background-color: var(--apex-bg-secondary);
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-md);
+  color: var(--apex-text-primary);
+  padding: var(--apex-space-sm) var(--apex-space-md);
+  font-family: var(--apex-font-family);
+  font-size: var(--apex-font-size-base);
+  transition: all var(--apex-transition-fast);
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--apex-accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Search */
+.cp__header-search-inner {
+  background-color: var(--apex-bg-secondary);
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-lg);
+}
+
+/* Right sidebar */
+#right-sidebar {
+  background-color: var(--apex-bg-secondary);
+  border-left: 1px solid var(--apex-border-primary);
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--apex-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--apex-bg-tertiary);
+  border-radius: var(--apex-radius-sm);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--apex-bg-quaternary);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(0, 122, 255, 0.3);
+  color: var(--apex-text-primary);
+}
+
+/* Focus styles */
+*:focus {
+  outline: 2px solid var(--apex-accent-blue);
+  outline-offset: 2px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Card-like containers */
+.card {
+  background-color: var(--apex-bg-secondary);
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-lg);
+  padding: var(--apex-space-lg);
+  margin: var(--apex-space-md) 0;
+  transition: all var(--apex-transition-base);
+}
+
+.card:hover {
+  border-color: var(--apex-border-secondary);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* TODO/DONE states */
+.todo-keyword {
+  background-color: var(--apex-accent-orange);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--apex-radius-sm);
+  font-size: var(--apex-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.done-keyword {
+  background-color: var(--apex-accent-green);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--apex-radius-sm);
+  font-size: var(--apex-font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .cp__sidebar-main-content {
+    padding: var(--apex-space-lg);
+  }
+  
+  h1.title {
+    font-size: var(--apex-font-size-2xl);
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  #left-sidebar,
+  #right-sidebar {
+    display: none;
+  }
+}
