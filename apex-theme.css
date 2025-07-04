@@ -1,10 +1,10 @@
 /*
- * Apex Theme for Logseq
+ * Apex Theme for Logseq - Refined Edition
  * An elegant, minimalistic dark theme inspired by Apple's design philosophy
  * with sophisticated typography using Azeret Mono and harmonious color theory
  */
 
-/* Import Azeret Mono font from Google Fonts */
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -12,136 +12,139 @@
   /* === APEX CORE COLOR SYSTEM === */
   
   /* Background Hierarchy - Professional developer palette */
-  --apex-bg-primary: #0D0D0D;          /* hsla(0, 0, 5, 1) - Deepest black */
-  --apex-bg-secondary: #101726;        /* hsla(219, 40, 10, 1) - Dark blue-gray */
-  --apex-bg-tertiary: #1E2940;         /* hsla(219, 36, 18, 1) - Medium blue-gray */
-  --apex-bg-quaternary: #2a3247;       /* Slightly lighter variation for hover */
-  --apex-bg-surface: #161b2e;          /* Between primary and secondary for inputs */
+  --apex-bg-primary: #0D0D0D;          /* Deepest black */
+  --apex-bg-secondary: #101726;        /* Dark blue-gray */
+  --apex-bg-tertiary: #1E2940;         /* Medium blue-gray */
+  --apex-bg-quaternary: #2a3247;       /* Slightly lighter variation */
+  --apex-bg-surface: #161b2e;          /* For inputs and overlays */
+  --apex-bg-hover: #252d42;            /* Hover states */
   
   /* Text Hierarchy - Sophisticated contrast system */
-  --apex-text-primary: #F2F2F2;        /* hsla(0, 0, 95, 1) - Almost white */
-  --apex-text-secondary: #e8e8e8;      /* Slightly dimmed primary */
-  --apex-text-tertiary: #737373;       /* hsla(0, 0, 45, 1) - Medium gray */
-  --apex-text-quaternary: #5a5a5a;     /* Darker gray for disabled states */
+  --apex-text-primary: #F2F2F2;        /* Almost white */
+  --apex-text-secondary: #e8e8e8;      /* Slightly dimmed */
+  --apex-text-tertiary: #737373;       /* Medium gray */
+  --apex-text-quaternary: #5a5a5a;     /* Darker gray */
   --apex-text-accent: #ffffff;         /* Pure white for highlights */
+  --apex-text-muted: #9CA3AF;          /* For subtle text */
   
-  /* Apple-inspired Accent Colors - Harmonized with the base palette */
-  --apex-blue: #4A9EFF;                /* Softened blue that works with dark blue-gray */
+  /* Apple-inspired Accent Colors */
+  --apex-blue: #4A9EFF;                /* Primary blue */
   --apex-blue-hover: #357ABD;          /* Darker blue hover */
-  --apex-blue-light: rgba(74, 158, 255, 0.15);  /* Blue with transparency */
-  --apex-green: #4ADE80;               /* Fresh green for success */
-  --apex-orange: #FB923C;              /* Warm orange for warnings */
-  --apex-red: #F87171;                 /* Soft red for errors */
-  --apex-purple: #A78BFA;              /* Elegant purple for special elements */
-  --apex-yellow: #FDE047;              /* Bright yellow for highlights */
-  --apex-cyan: #67E8F9;                /* Cool cyan for information */
-  --apex-pink: #F472B6;                /* Vibrant pink for accents */
+  --apex-blue-light: rgba(74, 158, 255, 0.15);
+  --apex-blue-subtle: rgba(74, 158, 255, 0.08);
+  --apex-green: #4ADE80;               /* Success green */
+  --apex-orange: #FB923C;              /* Warning orange */
+  --apex-red: #F87171;                 /* Error red */
+  --apex-purple: #A78BFA;              /* Accent purple */
+  --apex-yellow: #FDE047;              /* Highlight yellow */
+  --apex-cyan: #67E8F9;                /* Reference cyan */
+  --apex-pink: #F472B6;                /* Tag pink */
   
-  /* Border System - Using the palette's natural progression */
-  --apex-border-primary: #2D3748;      /* Lighter than tertiary background */
-  --apex-border-secondary: #4A5568;    /* Medium border for emphasis */
-  --apex-border-subtle: #1A202C;       /* Very subtle dividers */
-  --apex-border-focus: var(--apex-blue); /* Focus indicators */
+  /* Border System */
+  --apex-border-primary: #2D3748;      /* Main borders */
+  --apex-border-secondary: #4A5568;    /* Emphasis borders */
+  --apex-border-subtle: #1A202C;       /* Subtle dividers */
+  --apex-border-focus: var(--apex-blue);
   
-  /* Shadow System */
-  --apex-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --apex-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --apex-shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.5);
-  --apex-shadow-focus: 0 0 0 3px rgba(0, 122, 255, 0.2);
+  /* Shadow System with blue-gray tints */
+  --apex-shadow-sm: 0 1px 3px rgba(16, 23, 38, 0.4);
+  --apex-shadow-md: 0 4px 12px rgba(16, 23, 38, 0.5);
+  --apex-shadow-lg: 0 12px 32px rgba(16, 23, 38, 0.6);
+  --apex-shadow-focus: 0 0 0 3px rgba(74, 158, 255, 0.3);
+  --apex-shadow-glow: 0 0 20px rgba(74, 158, 255, 0.15);
   
-  /* Typography System */
-  --apex-font-family: 'Azeret Mono', 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, monospace;
-  --apex-font-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  /* Typography */
+  --apex-font-family: 'Azeret Mono', 'SF Mono', Monaco, 'Cascadia Code', monospace;
+  --apex-font-ui: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   
-  /* Font Weights */
+  /* Font weights */
   --apex-font-light: 300;
   --apex-font-normal: 400;
   --apex-font-medium: 500;
   --apex-font-semibold: 600;
   --apex-font-bold: 700;
   
-  /* Font Sizes */
-  --apex-text-xs: 0.75rem;             /* 12px */
-  --apex-text-sm: 0.875rem;            /* 14px */
-  --apex-text-base: 1rem;              /* 16px */
-  --apex-text-lg: 1.125rem;            /* 18px */
-  --apex-text-xl: 1.25rem;             /* 20px */
-  --apex-text-2xl: 1.5rem;             /* 24px */
-  --apex-text-3xl: 1.875rem;           /* 30px */
-  --apex-text-4xl: 2.25rem;            /* 36px */
+  /* Spacing scale */
+  --apex-space-1: 0.25rem;
+  --apex-space-2: 0.5rem;
+  --apex-space-3: 0.75rem;
+  --apex-space-4: 1rem;
+  --apex-space-5: 1.25rem;
+  --apex-space-6: 1.5rem;
+  --apex-space-8: 2rem;
+  --apex-space-10: 2.5rem;
+  --apex-space-12: 3rem;
   
-  /* Spacing Scale */
-  --apex-space-1: 0.25rem;             /* 4px */
-  --apex-space-2: 0.5rem;              /* 8px */
-  --apex-space-3: 0.75rem;             /* 12px */
-  --apex-space-4: 1rem;                /* 16px */
-  --apex-space-5: 1.25rem;             /* 20px */
-  --apex-space-6: 1.5rem;              /* 24px */
-  --apex-space-8: 2rem;                /* 32px */
-  --apex-space-10: 2.5rem;             /* 40px */
-  --apex-space-12: 3rem;               /* 48px */
-  
-  /* Border Radius */
-  --apex-radius-sm: 0.25rem;           /* 4px */
-  --apex-radius-md: 0.5rem;            /* 8px */
-  --apex-radius-lg: 0.75rem;           /* 12px */
-  --apex-radius-xl: 1rem;              /* 16px */
-  --apex-radius-2xl: 1.5rem;           /* 24px */
+  /* Border radius */
+  --apex-radius-sm: 0.25rem;
+  --apex-radius-md: 0.5rem;
+  --apex-radius-lg: 0.75rem;
+  --apex-radius-xl: 1rem;
+  --apex-radius-2xl: 1.5rem;
   
   /* Transitions */
   --apex-transition-fast: 0.125s cubic-bezier(0.4, 0, 0.2, 1);
   --apex-transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --apex-transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* === LOGSEQ CORE VARIABLES OVERRIDE === */
-  
-  /* Background Colors */
+  /* Font feature settings for better typography */
+  --apex-font-features: "liga" 1, "calt" 1, "kern" 1, "ss01" 1, "ss02" 1;
+}
+
+/* === LOGSEQ VARIABLES MAPPING === */
+.white-theme,
+.light-theme,
+.dark-theme,
+html[data-theme="light"],
+html[data-theme="dark"] {
+  /* Core backgrounds */
   --ls-primary-background-color: var(--apex-bg-primary);
   --ls-secondary-background-color: var(--apex-bg-secondary);
   --ls-tertiary-background-color: var(--apex-bg-tertiary);
   --ls-quaternary-background-color: var(--apex-bg-quaternary);
   
-  /* Text Colors */
+  /* Text colors */
   --ls-primary-text-color: var(--apex-text-primary);
   --ls-secondary-text-color: var(--apex-text-secondary);
   --ls-title-text-color: var(--apex-text-accent);
   
-  /* Link Colors */
+  /* Link colors */
   --ls-link-text-color: var(--apex-blue);
   --ls-link-text-hover-color: var(--apex-blue-hover);
   --ls-link-ref-text-color: var(--apex-cyan);
   --ls-link-ref-text-hover-color: var(--apex-blue);
   --ls-external-link-color: var(--apex-purple);
   
-  /* Active States */
+  /* Active states */
   --ls-active-primary-color: var(--apex-blue);
   --ls-active-secondary-color: var(--apex-blue-hover);
   
-  /* Border Colors */
+  /* Borders */
   --ls-border-color: var(--apex-border-primary);
   --ls-secondary-border-color: var(--apex-border-secondary);
   --ls-tertiary-border-color: var(--apex-border-subtle);
   
-  /* Status Colors */
+  /* Status colors */
   --ls-error-color: var(--apex-red);
   --ls-warning-color: var(--apex-orange);
   --ls-success-color: var(--apex-green);
   
-  /* Highlight Colors - Refined for the new palette */
-  --ls-highlight-color-gray: rgba(115, 115, 115, 0.25);
-  --ls-highlight-color-red: rgba(248, 113, 113, 0.25);
-  --ls-highlight-color-orange: rgba(251, 146, 60, 0.25);
-  --ls-highlight-color-yellow: rgba(253, 224, 71, 0.25);
-  --ls-highlight-color-green: rgba(74, 222, 128, 0.25);
-  --ls-highlight-color-blue: rgba(74, 158, 255, 0.25);
-  --ls-highlight-color-purple: rgba(167, 139, 250, 0.25);
-  --ls-highlight-color-pink: rgba(244, 114, 182, 0.25);
+  /* Highlights with refined opacity */
+  --ls-highlight-color-gray: rgba(115, 115, 115, 0.2);
+  --ls-highlight-color-red: rgba(248, 113, 113, 0.2);
+  --ls-highlight-color-orange: rgba(251, 146, 60, 0.2);
+  --ls-highlight-color-yellow: rgba(253, 224, 71, 0.2);
+  --ls-highlight-color-green: rgba(74, 222, 128, 0.2);
+  --ls-highlight-color-blue: rgba(74, 158, 255, 0.2);
+  --ls-highlight-color-purple: rgba(167, 139, 250, 0.2);
+  --ls-highlight-color-pink: rgba(244, 114, 182, 0.2);
   
   /* Typography */
   --ls-font-family: var(--apex-font-family);
-  --ls-page-text-size: var(--apex-text-base);
-  --ls-page-title-size: var(--apex-text-3xl);
+  --ls-page-text-size: 1.02rem;
+  --ls-page-title-size: 2.2rem;
   --ls-font-weight: var(--apex-font-normal);
+  --ls-font-feature-settings: var(--apex-font-features);
   
   /* Layout */
   --ls-main-content-max-width: 900px;
@@ -154,7 +157,7 @@
   --ls-border-radius-low: var(--apex-radius-sm);
   --ls-border-radius-medium: var(--apex-radius-md);
   
-  /* Block Elements */
+  /* Blocks */
   --ls-block-bullet-color: var(--apex-border-primary);
   --ls-block-bullet-border-color: var(--apex-border-secondary);
   --ls-bullet-closed-color: var(--apex-text-tertiary);
@@ -172,7 +175,7 @@
   --ls-scrollbar-background-color: var(--apex-bg-primary);
   --ls-scrollbar-thumb-hover-color: var(--apex-border-secondary);
   
-  /* Page Elements */
+  /* Page elements */
   --ls-page-checkbox-color: var(--apex-blue);
   --ls-page-checkbox-border-color: var(--apex-border-primary);
   --ls-page-blockquote-color: var(--apex-text-secondary);
@@ -183,7 +186,7 @@
   --ls-page-inline-code-color: var(--apex-green);
   --ls-page-inline-code-bg-color: var(--apex-bg-surface);
   
-  /* Tag Colors */
+  /* Tags */
   --ls-tag-text-color: var(--apex-purple);
   --ls-tag-text-hover-color: var(--apex-text-primary);
   --ls-tag-text-opacity: 0.85;
@@ -200,7 +203,7 @@
   --ls-menu-hover-color: var(--apex-bg-tertiary);
   
   /* Block highlight */
-  --ls-block-highlight-color: rgba(0, 122, 255, 0.05);
+  --ls-block-highlight-color: var(--apex-blue-subtle);
   
   /* Properties */
   --ls-page-properties-background-color: var(--apex-bg-secondary);
@@ -215,7 +218,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-feature-settings: "liga" 1, "calt" 1, "kern" 1;
+  font-feature-settings: var(--apex-font-features);
 }
 
 body {
@@ -224,15 +227,14 @@ body {
   background-color: var(--apex-bg-primary);
   color: var(--apex-text-primary);
   transition: background-color var(--apex-transition-base);
+  font-feature-settings: var(--apex-font-features);
 }
-
-/* === APPLICATION CONTAINER === */
 
 #app-container {
   background-color: var(--apex-bg-primary);
 }
 
-/* === TYPOGRAPHY === */
+/* === ENHANCED TYPOGRAPHY === */
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--apex-font-family);
@@ -241,58 +243,41 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   line-height: 1.3;
   margin: var(--apex-space-6) 0 var(--apex-space-4) 0;
+  font-feature-settings: var(--apex-font-features);
 }
 
-h1 {
-  font-size: var(--apex-text-4xl);
-  font-weight: var(--apex-font-bold);
-}
+h1 { font-size: 2.25rem; font-weight: var(--apex-font-bold); }
+h2 { font-size: 1.875rem; font-weight: var(--apex-font-semibold); }
+h3 { font-size: 1.5rem; font-weight: var(--apex-font-semibold); }
+h4 { font-size: 1.25rem; font-weight: var(--apex-font-medium); }
+h5 { font-size: 1.125rem; font-weight: var(--apex-font-medium); }
+h6 { font-size: 1rem; font-weight: var(--apex-font-medium); }
 
-h2 {
-  font-size: var(--apex-text-3xl);
-  font-weight: var(--apex-font-semibold);
-}
-
-h3 {
-  font-size: var(--apex-text-2xl);
-  font-weight: var(--apex-font-semibold);
-}
-
-h4 {
-  font-size: var(--apex-text-xl);
-  font-weight: var(--apex-font-medium);
-}
-
-h5 {
-  font-size: var(--apex-text-lg);
-  font-weight: var(--apex-font-medium);
-}
-
-h6 {
-  font-size: var(--apex-text-base);
-  font-weight: var(--apex-font-medium);
-}
-
-/* Page Title */
+/* Enhanced page title with text shadow */
 h1.title {
-  font-size: var(--apex-text-4xl);
+  font-size: 2.5rem;
   font-weight: var(--apex-font-bold);
   color: var(--apex-text-accent);
   margin: var(--apex-space-8) 0 var(--apex-space-6) 0;
   letter-spacing: -0.03em;
   line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(16, 23, 38, 0.3);
+  text-shadow: 0 2px 8px rgba(74, 158, 255, 0.2);
+  background: linear-gradient(135deg, var(--apex-text-accent) 0%, var(--apex-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* === LAYOUT COMPONENTS === */
 
-/* Header */
+/* Enhanced header with backdrop blur */
 .cp__header {
-  background-color: var(--apex-bg-secondary);
+  background: rgba(16, 23, 38, 0.8);
   border-bottom: 1px solid var(--apex-border-primary);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   height: var(--ls-headbar-height);
+  position: relative;
 }
 
 .cp__header::after {
@@ -310,21 +295,22 @@ h1.title {
   color: var(--apex-text-primary);
 }
 
-/* Left Sidebar */
+/* Enhanced left sidebar */
 #left-sidebar {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(180deg, var(--apex-bg-secondary) 0%, rgba(16, 23, 38, 0.95) 100%);
   border-right: 1px solid var(--apex-border-primary);
   width: var(--ls-left-sidebar-width);
+  backdrop-filter: blur(10px);
 }
 
 .left-sidebar-inner {
-  background-color: var(--apex-bg-secondary);
+  background: transparent;
   padding: var(--apex-space-6);
 }
 
 .left-sidebar-inner .nav-header {
   font-weight: var(--apex-font-semibold);
-  font-size: var(--apex-text-sm);
+  font-size: 0.75rem;
   color: var(--apex-text-tertiary);
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -342,66 +328,70 @@ h1.title {
   align-items: center;
   margin-bottom: var(--apex-space-1);
   font-weight: var(--apex-font-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.left-sidebar-inner a::before,
+.nav-content-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--apex-blue);
+  transform: scaleY(0);
+  transition: transform var(--apex-transition-fast);
 }
 
 .left-sidebar-inner a:hover,
 .nav-content-item:hover {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, var(--apex-bg-tertiary) 0%, rgba(74, 158, 255, 0.05) 100%);
   color: var(--apex-text-primary);
   transform: translateX(2px);
 }
 
-/* Right Sidebar */
-#right-sidebar {
-  background-color: var(--apex-bg-secondary);
-  border-left: 1px solid var(--apex-border-primary);
+.left-sidebar-inner a:hover::before,
+.nav-content-item:hover::before {
+  transform: scaleY(1);
 }
 
-.cp__right-sidebar-topbar {
-  background-color: var(--apex-bg-secondary);
-  border-bottom: 1px solid var(--apex-border-primary);
-}
-
-.cp__right-sidebar-topbar::after {
-  display: none;
-}
-
-/* Main Content */
-#main-content-container {
-  background-color: var(--apex-bg-primary);
-}
-
+/* Enhanced main content */
 .cp__sidebar-main-content {
   padding: var(--apex-space-10);
   max-width: var(--ls-main-content-max-width);
   margin: 0 auto;
 }
 
-/* === BLOCK SYSTEM === */
+/* === ENHANCED BLOCK SYSTEM === */
 
 .ls-block {
   margin-bottom: var(--apex-space-3);
 }
 
 .block-content {
-  font-size: var(--apex-text-base);
+  font-size: 1.02rem;
   line-height: 1.7;
   color: var(--apex-text-primary);
   font-family: var(--apex-font-family);
+  font-feature-settings: var(--apex-font-features);
 }
 
 .block-content-wrapper {
   background-color: transparent;
-  transition: background-color var(--apex-transition-fast);
+  transition: all var(--apex-transition-fast);
   border-radius: var(--apex-radius-md);
   padding: var(--apex-space-1);
+  position: relative;
 }
 
 .block-content-wrapper:hover {
-  background-color: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.02) 0%, rgba(74, 158, 255, 0.02) 100%);
+  box-shadow: var(--apex-shadow-sm);
 }
 
-/* Bullets */
+/* Enhanced bullets with micro-interactions */
 .bullet-container {
   width: 20px;
   height: 20px;
@@ -416,12 +406,31 @@ h1.title {
   background-color: var(--apex-border-primary);
   border-radius: 50%;
   transition: all var(--apex-transition-fast);
+  position: relative;
+}
+
+.bullet::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--apex-blue) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--apex-transition-fast);
 }
 
 .bullet:hover {
   background-color: var(--apex-blue);
   transform: scale(1.3);
-  box-shadow: 0 0 0 2px var(--apex-blue-light);
+  box-shadow: 0 0 0 3px var(--apex-blue-light);
+}
+
+.bullet:hover::before {
+  opacity: 0.3;
 }
 
 .bullet-container.bullet-closed .bullet {
@@ -429,96 +438,151 @@ h1.title {
   border: 1px solid var(--apex-text-tertiary);
 }
 
-/* === LINKS AND REFERENCES === */
+/* === ENHANCED LINKS AND REFERENCES === */
 
 a {
   color: var(--apex-blue);
   text-decoration: none;
-  transition: color var(--apex-transition-fast);
+  transition: all var(--apex-transition-fast);
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--apex-blue);
+  transition: width var(--apex-transition-fast);
 }
 
 a:hover {
   color: var(--apex-blue-hover);
 }
 
+a:hover::after {
+  width: 100%;
+}
+
+/* Enhanced page references with gradient backgrounds */
 .page-reference {
   color: var(--apex-cyan);
-  background-color: var(--apex-blue-light);
+  background: linear-gradient(135deg, var(--apex-blue-light) 0%, rgba(103, 232, 249, 0.1) 100%);
   padding: 0.125rem 0.5rem;
   border-radius: var(--apex-radius-sm);
   text-decoration: none;
   transition: all var(--apex-transition-fast);
   font-weight: var(--apex-font-medium);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-reference::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left var(--apex-transition-base);
 }
 
 .page-reference:hover {
-  background-color: rgba(90, 200, 250, 0.2);
+  background: linear-gradient(135deg, rgba(103, 232, 249, 0.2) 0%, var(--apex-blue-light) 100%);
   color: var(--apex-text-primary);
   transform: translateY(-1px);
+  box-shadow: var(--apex-shadow-sm);
+  border-color: var(--apex-cyan);
 }
 
-.page-ref {
-  color: var(--apex-cyan);
-  transition: color var(--apex-transition-fast);
+.page-reference:hover::before {
+  left: 100%;
 }
 
-.page-ref:hover {
-  color: var(--apex-blue);
-}
-
-/* External Links */
-a.external-link {
-  color: var(--apex-purple);
-  position: relative;
-}
-
-a.external-link:hover {
-  color: var(--apex-pink);
-}
-
-/* === TAGS === */
+/* === ENHANCED TAGS === */
 
 .tag {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, var(--apex-bg-tertiary) 0%, rgba(167, 139, 250, 0.1) 100%);
   color: var(--apex-purple);
   padding: 0.25rem 0.5rem;
   border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-sm);
+  font-size: 0.875rem;
   font-weight: var(--apex-font-medium);
   transition: all var(--apex-transition-fast);
   text-decoration: none;
   border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--apex-purple) 0%, var(--apex-pink) 100%);
+  opacity: 0;
+  transition: opacity var(--apex-transition-fast);
+}
+
+.tag::after {
+  content: attr(data-ref);
+  position: relative;
+  z-index: 1;
 }
 
 .tag:hover {
-  background-color: var(--apex-purple);
   color: var(--apex-text-primary);
-  border-color: var(--apex-purple);
   transform: translateY(-1px);
   box-shadow: var(--apex-shadow-sm);
+  border-color: var(--apex-purple);
 }
 
-/* === CODE BLOCKS === */
+.tag:hover::before {
+  opacity: 1;
+}
+
+/* === ENHANCED CODE BLOCKS === */
 
 code {
   font-family: var(--apex-font-family);
-  background-color: var(--apex-bg-surface);
+  background: linear-gradient(135deg, var(--apex-bg-surface) 0%, rgba(74, 222, 128, 0.05) 100%);
   color: var(--apex-green);
   padding: 0.125rem 0.375rem;
   border-radius: var(--apex-radius-sm);
   font-size: 0.9em;
   font-weight: var(--apex-font-normal);
-  border: 1px solid var(--apex-border-subtle);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  position: relative;
 }
 
 pre {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, var(--apex-bg-secondary) 0%, rgba(16, 23, 38, 0.8) 100%);
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   padding: var(--apex-space-6);
   overflow-x: auto;
   margin: var(--apex-space-4) 0;
   font-family: var(--apex-font-family);
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--apex-blue), transparent);
+  opacity: 0.3;
 }
 
 pre code {
@@ -528,38 +592,49 @@ pre code {
   border: none;
 }
 
-/* === BLOCKQUOTES === */
+/* === ENHANCED BLOCKQUOTES === */
 
 blockquote {
   border-left: 4px solid var(--apex-blue);
-  padding-left: var(--apex-space-6);
   margin: var(--apex-space-4) 0;
   color: var(--apex-text-secondary);
   font-style: italic;
-  background: linear-gradient(
-    135deg, 
+  background: linear-gradient(135deg, 
     rgba(74, 158, 255, 0.08) 0%, 
-    rgba(16, 23, 38, 0.4) 100%
+    rgba(16, 23, 38, 0.6) 50%,
+    rgba(30, 41, 64, 0.4) 100%
   );
   border-radius: 0 var(--apex-radius-md) var(--apex-radius-md) 0;
   padding: var(--apex-space-4) var(--apex-space-6);
   position: relative;
   backdrop-filter: blur(10px);
+  overflow: hidden;
 }
 
 blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--apex-blue), transparent);
+  opacity: 0.6;
+}
+
+blockquote::after {
   content: '"';
   font-size: 4rem;
   color: var(--apex-blue);
   position: absolute;
-  left: var(--apex-space-4);
-  top: -var(--apex-space-2);
+  right: var(--apex-space-4);
+  bottom: -var(--apex-space-2);
   line-height: 1;
-  opacity: 0.2;
+  opacity: 0.1;
   font-family: var(--apex-font-ui);
 }
 
-/* === FORMS AND INPUTS === */
+/* === ENHANCED FORMS === */
 
 input[type="text"],
 input[type="search"],
@@ -567,14 +642,15 @@ input[type="email"],
 input[type="password"],
 textarea,
 .form-input {
-  background-color: var(--apex-bg-surface);
+  background: linear-gradient(135deg, var(--apex-bg-surface) 0%, rgba(16, 23, 38, 0.8) 100%);
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-md);
   color: var(--apex-text-primary);
   padding: var(--apex-space-3) var(--apex-space-4);
   font-family: var(--apex-font-family);
-  font-size: var(--apex-text-base);
+  font-size: 1rem;
   transition: all var(--apex-transition-fast);
+  position: relative;
 }
 
 input:focus,
@@ -583,21 +659,21 @@ textarea:focus,
   outline: none;
   border-color: var(--apex-blue);
   box-shadow: var(--apex-shadow-focus);
-  background-color: var(--apex-bg-primary);
+  background: linear-gradient(135deg, var(--apex-bg-primary) 0%, rgba(74, 158, 255, 0.05) 100%);
 }
 
-/* === BUTTONS === */
+/* === ENHANCED BUTTONS === */
 
 button,
 .button,
 .ui__button {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, var(--apex-bg-tertiary) 0%, rgba(42, 50, 71, 0.8) 100%);
   color: var(--apex-text-primary);
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-md);
   padding: var(--apex-space-3) var(--apex-space-5);
   font-family: var(--apex-font-family);
-  font-size: var(--apex-text-sm);
+  font-size: 0.875rem;
   font-weight: var(--apex-font-medium);
   cursor: pointer;
   transition: all var(--apex-transition-fast);
@@ -605,54 +681,65 @@ button,
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before,
+.button::before,
+.ui__button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left var(--apex-transition-base);
 }
 
 button:hover,
 .button:hover,
 .ui__button:hover {
-  background-color: var(--apex-bg-quaternary);
+  background: linear-gradient(135deg, var(--apex-bg-quaternary) 0%, rgba(74, 158, 255, 0.1) 100%);
   border-color: var(--apex-blue);
   transform: translateY(-1px);
   box-shadow: var(--apex-shadow-sm);
 }
 
-/* Primary Button */
-.button-primary {
-  background-color: var(--apex-blue);
-  border-color: var(--apex-blue);
-  color: white;
+button:hover::before,
+.button:hover::before,
+.ui__button:hover::before {
+  left: 100%;
 }
 
-.button-primary:hover {
-  background-color: var(--apex-blue-hover);
-  border-color: var(--apex-blue-hover);
-}
+/* === ENHANCED TODO/DONE STATES === */
 
-/* === TODO/DONE STATES === */
-
-.todo-keyword {
-  background-color: var(--apex-orange);
-  color: white;
+.todo-keyword,
+.done-keyword {
   padding: 0.25rem 0.5rem;
   border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-xs);
+  font-size: 0.75rem;
   font-weight: var(--apex-font-semibold);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-keyword {
+  background: linear-gradient(135deg, var(--apex-orange) 0%, #ff8c42 100%);
+  color: white;
+  box-shadow: 0 2px 4px rgba(251, 146, 60, 0.3);
 }
 
 .done-keyword {
-  background-color: var(--apex-green);
+  background: linear-gradient(135deg, var(--apex-green) 0%, #22c55e 100%);
   color: white;
-  padding: 0.25rem 0.5rem;
-  border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-xs);
-  font-weight: var(--apex-font-semibold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(74, 222, 128, 0.3);
 }
 
-/* === SCROLLBARS === */
+/* === ENHANCED SCROLLBARS === */
 
 ::-webkit-scrollbar {
   width: var(--ls-scrollbar-width);
@@ -661,94 +748,141 @@ button:hover,
 
 ::-webkit-scrollbar-track {
   background: var(--apex-bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--apex-border-primary);
   border-radius: var(--apex-radius-sm);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--apex-border-secondary);
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--apex-border-primary) 0%, var(--apex-border-secondary) 100%);
+  border-radius: var(--apex-radius-sm);
+  border: 1px solid var(--apex-border-subtle);
 }
 
-/* === SELECTION === */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--apex-border-secondary) 0%, var(--apex-blue) 100%);
+}
+
+/* === ENHANCED SELECTION === */
 
 ::selection {
-  background-color: var(--apex-blue-light);
+  background: linear-gradient(135deg, var(--apex-blue-light) 0%, rgba(103, 232, 249, 0.2) 100%);
   color: var(--apex-text-primary);
 }
 
 ::-moz-selection {
-  background-color: var(--apex-blue-light);
+  background: linear-gradient(135deg, var(--apex-blue-light) 0%, rgba(103, 232, 249, 0.2) 100%);
   color: var(--apex-text-primary);
 }
 
-/* === FOCUS STYLES === */
-
-*:focus {
-  outline: 2px solid var(--apex-blue);
-  outline-offset: 2px;
-}
-
-/* === PROPERTIES === */
+/* === ENHANCED PROPERTIES === */
 
 .block-properties,
 .page-properties {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.8) 50%,
+    var(--apex-bg-tertiary) 100%
+  );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   padding: var(--apex-space-4);
   margin: var(--apex-space-4) 0;
+  position: relative;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.block-properties::before,
+.page-properties::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--apex-blue), transparent);
+  opacity: 0.4;
 }
 
 .page-property-key {
   color: var(--apex-text-secondary);
   font-weight: var(--apex-font-medium);
+  font-size: 0.875rem;
 }
 
 .page-property-value {
   color: var(--apex-text-primary);
 }
 
-/* === TABLES === */
+.page-property-key:hover,
+.page-property-value:hover {
+  color: var(--apex-blue);
+  transition: color var(--apex-transition-fast);
+}
+
+/* === ENHANCED TABLES === */
 
 table {
   border-collapse: collapse;
   width: 100%;
   margin: var(--apex-space-4) 0;
+  border-radius: var(--apex-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--apex-shadow-sm);
 }
 
 th {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, var(--apex-bg-secondary) 0%, var(--apex-bg-tertiary) 100%);
   color: var(--apex-text-primary);
   font-weight: var(--apex-font-semibold);
   padding: var(--apex-space-3) var(--apex-space-4);
   border: 1px solid var(--apex-border-primary);
   text-align: left;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 td {
   padding: var(--apex-space-3) var(--apex-space-4);
   border: 1px solid var(--apex-border-primary);
   color: var(--apex-text-primary);
+  background-color: var(--apex-bg-primary);
 }
 
-tr:nth-child(even) {
-  background-color: var(--apex-bg-secondary);
+tr:nth-child(even) td {
+  background: linear-gradient(135deg, var(--apex-bg-secondary) 0%, rgba(16, 23, 38, 0.5) 100%);
 }
 
-tr:hover {
-  background-color: var(--apex-bg-tertiary);
+tr:hover td {
+  background: linear-gradient(135deg, var(--apex-bg-tertiary) 0%, rgba(74, 158, 255, 0.05) 100%);
+  color: var(--apex-text-primary);
 }
 
-/* === SEARCH === */
+/* === ENHANCED SEARCH === */
 
 .cp__header-search-inner {
-  background-color: var(--apex-bg-surface);
+  background: linear-gradient(135deg, var(--apex-bg-surface) 0%, rgba(22, 27, 46, 0.8) 100%);
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-xl);
   padding: var(--apex-space-2) var(--apex-space-4);
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.cp__header-search-inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--apex-radius-xl);
+  padding: 1px;
+  background: linear-gradient(135deg, var(--apex-blue) 0%, transparent 50%, var(--apex-cyan) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--apex-transition-fast);
 }
 
 .cp__header-search-inner:focus-within {
@@ -756,137 +890,94 @@ tr:hover {
   box-shadow: var(--apex-shadow-focus);
 }
 
-/* === MODALS AND PANELS === */
+.cp__header-search-inner:focus-within::before {
+  opacity: 1;
+}
+
+/* === ENHANCED MODALS AND PANELS === */
 
 .ui__modal-panel,
 .panel-content {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.95) 50%,
+    var(--apex-bg-tertiary) 100%
+  );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-xl);
   box-shadow: var(--apex-shadow-lg);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
 }
 
-/* === HIGHLIGHTS === */
+.ui__modal-panel::before,
+.panel-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--apex-blue), transparent);
+  opacity: 0.6;
+}
+
+/* === ENHANCED HIGHLIGHTS === */
 
 mark {
-  background-color: var(--apex-yellow);
+  background: linear-gradient(135deg, var(--apex-yellow) 0%, #fbbf24 100%);
   color: var(--apex-bg-primary);
   padding: 0.125rem 0.25rem;
   border-radius: var(--apex-radius-sm);
+  font-weight: var(--apex-font-medium);
+  box-shadow: 0 1px 3px rgba(253, 224, 71, 0.3);
 }
 
-/* Highlight colors */
-.bg-yellow-500,
-.ls-highlight-color-yellow {
-  background-color: var(--ls-highlight-color-yellow);
+/* Refined highlight colors with gradients */
+.bg-yellow-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-yellow) 0%, rgba(253, 224, 71, 0.3) 100%);
 }
 
-.bg-blue-500,
-.ls-highlight-color-blue {
-  background-color: var(--ls-highlight-color-blue);
+.bg-blue-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-blue) 0%, rgba(74, 158, 255, 0.3) 100%);
 }
 
-.bg-green-500,
-.ls-highlight-color-green {
-  background-color: var(--ls-highlight-color-green);
+.bg-green-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-green) 0%, rgba(74, 222, 128, 0.3) 100%);
 }
 
-.bg-red-500,
-.ls-highlight-color-red {
-  background-color: var(--ls-highlight-color-red);
+.bg-red-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-red) 0%, rgba(248, 113, 113, 0.3) 100%);
 }
 
-.bg-purple-500,
-.ls-highlight-color-purple {
-  background-color: var(--ls-highlight-color-purple);
+.bg-purple-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-purple) 0%, rgba(167, 139, 250, 0.3) 100%);
 }
 
-.bg-pink-500,
-.ls-highlight-color-pink {
-  background-color: var(--ls-highlight-color-pink);
+.bg-pink-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-pink) 0%, rgba(244, 114, 182, 0.3) 100%);
 }
 
-.bg-gray-500,
-.ls-highlight-color-gray {
-  background-color: var(--ls-highlight-color-gray);
+.bg-gray-500 { 
+  background: linear-gradient(135deg, var(--ls-highlight-color-gray) 0%, rgba(115, 115, 115, 0.3) 100%);
 }
 
-/* === GRAPH VIEW === */
-
-.graph-filters {
-  background-color: var(--apex-bg-secondary);
-  border: 1px solid var(--apex-border-primary);
-  border-radius: var(--apex-radius-lg);
-  box-shadow: var(--apex-shadow-md);
-}
-
-/* === PDF VIEWER === */
-
-.extensions__pdf-container {
-  background-color: var(--apex-bg-primary);
-}
-
-.extensions__pdf-container[data-theme="dark"] .textLayer {
-  background-color: var(--apex-bg-secondary);
-  filter: invert(100%);
-}
-
-.extensions__pdf-container[data-theme="dark"] .pdfViewer {
-  background: transparent;
-  filter: invert(100%);
-}
-
-.extensions__pdf-toolbar {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0) 10%,
-    var(--apex-bg-primary)
-  );
-}
-
-/* === WHITEBOARDS === */
-
-.logseq-tldraw {
-  --color-panel: var(--apex-bg-tertiary);
-  --color-panel-inverted: var(--apex-text-secondary);
-  --color-text: var(--apex-text-primary);
-  --color-text-inverted: var(--apex-bg-tertiary);
-  --color-hover: var(--apex-bg-secondary);
-  --color-selectedStroke: var(--apex-blue);
-  --color-selectedFill: var(--apex-blue-light);
-  --color-selectedContrast: var(--apex-text-primary);
-  --shadow-small: var(--apex-shadow-sm);
-  --shadow-medium: var(--apex-shadow-md);
-  --shadow-large: var(--apex-shadow-lg);
-  background-color: var(--apex-bg-primary);
-}
-
-/* === JOURNALS === */
-
-.journals .journal-item {
-  border-top: 1px solid var(--apex-border-subtle);
-  padding: var(--apex-space-6) 0;
-}
-
-.journals .journal-item:first-child {
-  border-top: none;
-}
-
-/* === CARDS AND CONTAINERS === */
+/* === ENHANCED CARDS AND CONTAINERS === */
 
 .card,
 .dashboard-card {
-  background: linear-gradient(
-    135deg,
-    var(--apex-bg-secondary) 0%,
-    rgba(30, 41, 64, 0.8) 100%
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.8) 50%,
+    rgba(42, 50, 71, 0.6) 100%
   );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   padding: var(--apex-space-6);
   margin: var(--apex-space-4) 0;
   transition: all var(--apex-transition-base);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   position: relative;
   overflow: hidden;
 }
@@ -899,12 +990,20 @@ mark {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    var(--apex-blue) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent, var(--apex-blue), transparent);
+  opacity: 0;
+  transition: opacity var(--apex-transition-base);
+}
+
+.card::after,
+.dashboard-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(74, 158, 255, 0.1) 0%, transparent 50%);
   opacity: 0;
   transition: opacity var(--apex-transition-base);
 }
@@ -914,7 +1013,7 @@ mark {
   border-color: var(--apex-blue);
   box-shadow: 
     var(--apex-shadow-md),
-    0 0 20px rgba(74, 158, 255, 0.1);
+    var(--apex-shadow-glow);
   transform: translateY(-2px);
 }
 
@@ -923,124 +1022,225 @@ mark {
   opacity: 1;
 }
 
+.card:hover::after,
+.dashboard-card:hover::after {
+  opacity: 1;
+}
+
 .dashboard-create-card {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-tertiary) 0%, 
+    rgba(42, 50, 71, 0.8) 100%
+  );
   border: 2px dashed var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   transition: all var(--apex-transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.dashboard-create-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--apex-blue) 0%, var(--apex-cyan) 100%);
+  opacity: 0;
+  transition: opacity var(--apex-transition-base);
 }
 
 .dashboard-create-card:hover {
-  background-color: var(--apex-bg-quaternary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-quaternary) 0%, 
+    rgba(74, 158, 255, 0.1) 100%
+  );
   border-color: var(--apex-blue);
   border-style: solid;
 }
 
-/* === REFERENCES === */
+.dashboard-create-card:hover::before {
+  opacity: 0.05;
+}
+
+/* === ENHANCED REFERENCES === */
 
 .references-blocks-item {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.8) 100%
+  );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   margin: var(--apex-space-3) 0;
   padding: var(--apex-space-4);
+  transition: all var(--apex-transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.references-blocks-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, var(--apex-blue) 0%, var(--apex-cyan) 100%);
+  transform: scaleY(0);
+  transition: transform var(--apex-transition-fast);
 }
 
 .references-blocks-item:hover {
   border-color: var(--apex-blue);
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-tertiary) 0%, 
+    rgba(74, 158, 255, 0.05) 100%
+  );
+  transform: translateX(4px);
 }
 
-/* === EMBED BLOCKS === */
+.references-blocks-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* === ENHANCED EMBED BLOCKS === */
 
 .embed-block,
 .embed-page {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.6) 100%
+  );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   padding: var(--apex-space-4);
   margin: var(--apex-space-4) 0;
+  backdrop-filter: blur(10px);
+  position: relative;
 }
 
-/* === PRIORITY LABELS === */
+.embed-block::before,
+.embed-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--apex-cyan), transparent);
+  opacity: 0.3;
+}
+
+/* === ENHANCED PRIORITY LABELS === */
 
 a[priority="A"]::before,
 a.priority[href="#/page/A" i]:before {
-  background: var(--apex-red);
+  background: linear-gradient(135deg, var(--apex-red) 0%, #dc2626 100%);
   color: white;
   content: "A";
   padding: 0.125rem 0.375rem;
   border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-xs);
+  font-size: 0.75rem;
   font-weight: var(--apex-font-bold);
   margin-right: var(--apex-space-2);
+  box-shadow: 0 2px 4px rgba(248, 113, 113, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 a[priority="B"]::before,
 a.priority[href="#/page/B" i]:before {
-  background: var(--apex-orange);
+  background: linear-gradient(135deg, var(--apex-orange) 0%, #ea580c 100%);
   color: white;
   content: "B";
   padding: 0.125rem 0.375rem;
   border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-xs);
+  font-size: 0.75rem;
   font-weight: var(--apex-font-bold);
   margin-right: var(--apex-space-2);
+  box-shadow: 0 2px 4px rgba(251, 146, 60, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 a[priority="C"]::before,
 a.priority[href="#/page/C" i]:before {
-  background: var(--apex-green);
+  background: linear-gradient(135deg, var(--apex-green) 0%, #16a34a 100%);
   color: white;
   content: "C";
   padding: 0.125rem 0.375rem;
   border-radius: var(--apex-radius-sm);
-  font-size: var(--apex-text-xs);
+  font-size: 0.75rem;
   font-weight: var(--apex-font-bold);
   margin-right: var(--apex-space-2);
+  box-shadow: 0 2px 4px rgba(74, 222, 128, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* === CHECKBOXES === */
+/* === ENHANCED CHECKBOXES === */
 
 .form-checkbox,
 .form-checkbox:checked {
-  background-color: var(--apex-blue);
+  background: linear-gradient(135deg, var(--apex-blue) 0%, #1d4ed8 100%);
   border-color: var(--apex-blue);
   color: white;
   border-radius: var(--apex-radius-sm);
+  box-shadow: 0 2px 4px rgba(74, 158, 255, 0.3);
+  transition: all var(--apex-transition-fast);
 }
 
 .form-checkbox:focus {
   box-shadow: var(--apex-shadow-focus);
+  transform: scale(1.05);
 }
 
-/* === TOOLTIPS === */
+.form-checkbox:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(74, 158, 255, 0.4);
+}
+
+/* === ENHANCED TOOLTIPS === */
 
 .tippy-tooltip {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-tertiary) 0%, 
+    rgba(42, 50, 71, 0.95) 100%
+  );
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-md);
   color: var(--apex-text-primary);
   box-shadow: var(--apex-shadow-md);
+  backdrop-filter: blur(10px);
 }
 
 .tippy-tooltip > .tippy-tooltip-content {
   padding: var(--apex-space-3) var(--apex-space-4);
 }
 
-/* === CODE MIRROR THEME === */
+/* === ENHANCED CODE MIRROR THEME === */
 
 .cm-s-solarized.CodeMirror,
 .cm-s-solarized.cm-s-dark {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.8) 100%
+  );
   color: var(--apex-text-primary);
   border: 1px solid var(--apex-border-primary);
   border-radius: var(--apex-radius-lg);
   font-family: var(--apex-font-family);
+  font-feature-settings: var(--apex-font-features);
+  backdrop-filter: blur(10px);
 }
 
 .cm-s-solarized .CodeMirror-gutters {
-  background-color: var(--apex-bg-secondary);
+  background: linear-gradient(180deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(16, 23, 38, 0.8) 100%
+  );
   border-right: 1px solid var(--apex-border-primary);
 }
 
@@ -1050,6 +1250,12 @@ a.priority[href="#/page/C" i]:before {
 
 .cm-s-solarized .CodeMirror-cursor {
   border-left: 2px solid var(--apex-blue);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
 
 .cm-s-solarized .cm-comment {
@@ -1100,48 +1306,47 @@ a.priority[href="#/page/C" i]:before {
 }
 
 .cm-s-solarized .CodeMirror-activeline-background {
-  background-color: var(--apex-bg-tertiary);
+  background: linear-gradient(135deg, 
+    var(--apex-bg-tertiary) 0%, 
+    rgba(74, 158, 255, 0.05) 100%
+  );
 }
 
 .cm-s-solarized .CodeMirror-selected {
-  background-color: var(--apex-blue-light);
+  background: var(--apex-blue-light);
 }
 
 .cm-s-solarized .CodeMirror-matchingbracket {
-  background-color: var(--apex-blue-light);
+  background: var(--apex-blue-light);
   color: var(--apex-text-primary);
+  border-radius: var(--apex-radius-sm);
 }
 
-/* === PLUGIN COMPATIBILITY === */
+/* === ENHANCED JOURNALS === */
 
-/* Query Builder */
-.cp__query-builder {
-  background-color: var(--apex-bg-secondary);
-  border: 1px solid var(--apex-border-primary);
-  border-radius: var(--apex-radius-lg);
-  padding: var(--apex-space-4);
+.journals .journal-item {
+  border-top: 1px solid var(--apex-border-subtle);
+  padding: var(--apex-space-6) 0;
+  position: relative;
 }
 
-.query-builder-clause {
-  background-color: var(--apex-bg-tertiary);
-  border: 1px solid var(--apex-border-primary);
-  border-radius: var(--apex-radius-md);
-  padding: var(--apex-space-2) var(--apex-space-3);
-  margin: var(--apex-space-1) 0;
+.journals .journal-item:first-child {
+  border-top: none;
 }
 
-.query-builder-clause:hover {
-  background-color: var(--apex-bg-quaternary);
-  border-color: var(--apex-blue);
+.journals .journal-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 0;
+  background: linear-gradient(180deg, var(--apex-blue) 0%, var(--apex-cyan) 100%);
+  transition: height var(--apex-transition-base);
 }
 
-/* Awesome UI Plugin Compatibility */
-body[data-awui] {
-  --awui-bg-primary: var(--apex-bg-primary);
-  --awui-bg-secondary: var(--apex-bg-secondary);
-  --awui-text-primary: var(--apex-text-primary);
-  --awui-text-secondary: var(--apex-text-secondary);
-  --awui-accent: var(--apex-blue);
+.journals .journal-item:hover::before {
+  height: 100%;
 }
 
 /* === RESPONSIVE DESIGN === */
@@ -1152,11 +1357,11 @@ body[data-awui] {
   }
   
   h1.title {
-    font-size: var(--apex-text-3xl);
+    font-size: 2rem;
   }
   
   .block-content {
-    font-size: var(--apex-text-sm);
+    font-size: 0.95rem;
   }
 }
 
@@ -1166,7 +1371,11 @@ body[data-awui] {
   }
   
   h1.title {
-    font-size: var(--apex-text-2xl);
+    font-size: 1.75rem;
+  }
+  
+  .left-sidebar-inner {
+    padding: var(--apex-space-4);
   }
 }
 
@@ -1183,15 +1392,6 @@ body[data-awui] {
   }
 }
 
-@keyframes pulse {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
 @keyframes slideInRight {
   from {
     opacity: 0;
@@ -1203,62 +1403,21 @@ body[data-awui] {
   }
 }
 
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--apex-blue);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--apex-blue), 0 0 30px var(--apex-blue);
+  }
+}
+
 .fade-in {
   animation: fadeInUp 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .slide-in {
   animation: slideInRight 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* === PRINT STYLES === */
-
-@media print {
-  body {
-    background-color: white;
-    color: black;
-  }
-  
-  #left-sidebar,
-  #right-sidebar,
-  .cp__header {
-    display: none;
-  }
-  
-  .cp__sidebar-main-content {
-    padding: 0;
-    max-width: none;
-  }
-  
-  .block-content-wrapper {
-    background-color: transparent;
-  }
-  
-  a {
-    color: black;
-    text-decoration: underline;
-  }
-}
-
-/* === DARK MODE ENHANCEMENTS === */
-
-.dark-theme,
-html[data-theme="dark"] {
-  color-scheme: dark;
-}
-
-/* Force dark theme styles */
-.white-theme,
-.light-theme,
-html[data-theme="light"] {
-  /* Override light theme with dark theme values */
-  --ls-primary-background-color: var(--apex-bg-primary);
-  --ls-secondary-background-color: var(--apex-bg-secondary);
-  --ls-tertiary-background-color: var(--apex-bg-tertiary);
-  --ls-quaternary-background-color: var(--apex-bg-quaternary);
-  --ls-primary-text-color: var(--apex-text-primary);
-  --ls-secondary-text-color: var(--apex-text-secondary);
-  --ls-border-color: var(--apex-border-primary);
 }
 
 /* === ACCESSIBILITY === */
@@ -1273,7 +1432,6 @@ html[data-theme="light"] {
   }
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
     --apex-text-primary: #ffffff;
@@ -1283,17 +1441,126 @@ html[data-theme="light"] {
   }
 }
 
-/* === FINAL OVERRIDES === */
+/* === PLUGIN COMPATIBILITY === */
 
-/* Ensure consistent font application */
-* {
-  font-family: var(--apex-font-family);
+/* Query Builder */
+.cp__query-builder {
+  background: linear-gradient(135deg, 
+    var(--apex-bg-secondary) 0%, 
+    rgba(30, 41, 64, 0.8) 100%
+  );
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-lg);
+  padding: var(--apex-space-4);
+  backdrop-filter: blur(10px);
 }
 
-/* Remove any unwanted light theme artifacts */
+.query-builder-clause {
+  background: linear-gradient(135deg, 
+    var(--apex-bg-tertiary) 0%, 
+    rgba(42, 50, 71, 0.8) 100%
+  );
+  border: 1px solid var(--apex-border-primary);
+  border-radius: var(--apex-radius-md);
+  padding: var(--apex-space-2) var(--apex-space-3);
+  margin: var(--apex-space-1) 0;
+  transition: all var(--apex-transition-fast);
+}
+
+.query-builder-clause:hover {
+  background: linear-gradient(135deg, 
+    var(--apex-bg-quaternary) 0%, 
+    rgba(74, 158, 255, 0.1) 100%
+  );
+  border-color: var(--apex-blue);
+  transform: translateX(2px);
+}
+
+/* PDF Viewer */
+.extensions__pdf-container {
+  background-color: var(--apex-bg-primary);
+}
+
+.extensions__pdf-container[data-theme="dark"] .textLayer {
+  background-color: var(--apex-bg-secondary);
+  filter: invert(100%);
+}
+
+.extensions__pdf-container[data-theme="dark"] .pdfViewer {
+  background: transparent;
+  filter: invert(100%);
+}
+
+/* Whiteboards */
+.logseq-tldraw {
+  --color-panel: var(--apex-bg-tertiary);
+  --color-panel-inverted: var(--apex-text-secondary);
+  --color-text: var(--apex-text-primary);
+  --color-text-inverted: var(--apex-bg-tertiary);
+  --color-hover: var(--apex-bg-secondary);
+  --color-selectedStroke: var(--apex-blue);
+  --color-selectedFill: var(--apex-blue-light);
+  --color-selectedContrast: var(--apex-text-primary);
+  --shadow-small: var(--apex-shadow-sm);
+  --shadow-medium: var(--apex-shadow-md);
+  --shadow-large: var(--apex-shadow-lg);
+  background-color: var(--apex-bg-primary);
+}
+
+/* === FINAL OVERRIDES === */
+
+/* Ensure all elements use the theme */
 body,
 #app-container,
 .cp__sidebar-main-content {
   background-color: var(--apex-bg-primary) !important;
   color: var(--apex-text-primary) !important;
+}
+
+/* Hide unwanted elements */
+::-webkit-scrollbar {
+  display: block !important;
+}
+
+/* Force consistent font application */
+* {
+  font-family: var(--apex-font-family);
+  font-feature-settings: var(--apex-font-features);
+}
+
+/* Override any light theme artifacts */
+.white-theme,
+.light-theme,
+html[data-theme="light"] {
+  --ls-primary-background-color: var(--apex-bg-primary) !important;
+  --ls-secondary-background-color: var(--apex-bg-secondary) !important;
+  --ls-tertiary-background-color: var(--apex-bg-tertiary) !important;
+  --ls-quaternary-background-color: var(--apex-bg-quaternary) !important;
+  --ls-primary-text-color: var(--apex-text-primary) !important;
+  --ls-secondary-text-color: var(--apex-text-secondary) !important;
+  --ls-border-color: var(--apex-border-primary) !important;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  #left-sidebar,
+  #right-sidebar,
+  .cp__header {
+    display: none !important;
+  }
+  
+  .cp__sidebar-main-content {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
 }
